@@ -63,8 +63,8 @@ sudo systemctl start crond.service
 sudo systemctl enable crond.service
 
 #Firewalld
-#sudo firewall-cmd --set-default-zone=block
-#sudo firewall-cmd --reload
+sudo firewall-cmd --set-default-zone=block
+sudo firewall-cmd --reload
 
 #Languages for LibreOffice
 sudo dnf install hunspell-es -y
@@ -111,7 +111,7 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature "u
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic true
 
 #Dock personalization (gsettings get org.gnome.shell favorite-apps)
-gsettings set org.gnome.shell favorite-apps "['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.standardnotes.standardnotes.desktop', 'com.spotify.Client.desktop', 'com.valvesoftware.Steam.desktop', 'com.stremio.Stremio.desktop']"
+gsettings set org.gnome.shell favorite-apps "['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'org.standardnotes.standardnotes.desktop', 'com.valvesoftware.Steam.desktop', 'com.stremio.Stremio.desktop']"
 echo 'Settings applied.'
 
 read -p 'Set up themes? (y/N) ' -n 1 -r
@@ -210,7 +210,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub org.gnome.Extensions -y
     flatpak install flathub com.mattjakeman.ExtensionManager -y
     flatpak install flathub com.github.tchx84.Flatseal -y
-    flatpak install flathub com.spotify.Client -y
     flatpak install flathub org.gnome.TextEditor -y
     flatpak install flathub org.standardnotes.standardnotes -y
     
