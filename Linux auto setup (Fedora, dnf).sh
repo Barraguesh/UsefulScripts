@@ -50,12 +50,15 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sh -c "$(curl -sL https://nextdns.io/install)"
 fi
 
-#Battery improvements with auto-cpufreq
-git clone https://github.com/AdnanHodzic/auto-cpufreq.git
-cd auto-cpufreq && sudo ./auto-cpufreq-installer
+read -p 'Install auto-cpufreq? (y/N) ' -n 1 -r
+echo -e "\n"
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    git clone https://github.com/AdnanHodzic/auto-cpufreq.git
+    cd auto-cpufreq && sudo ./auto-cpufreq-installer
+fi
 
 #Flatpak support
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 #Cron
 sudo dnf install cronie -y
