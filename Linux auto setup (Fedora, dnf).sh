@@ -59,6 +59,7 @@ fi
 
 #Flatpak support
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-modify --enable flathub
 
 #Cron
 sudo dnf install cronie -y
