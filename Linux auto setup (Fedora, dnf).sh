@@ -140,7 +140,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     #Papirus folders for custom folder colors
     wget -qO- https://git.io/papirus-folders-install | sh
     papirus-folders -C teal
-    cat <<< "@reboot /home/barraguesh/Documents/Tech\ stuff/Scripts/papirus-folders-color.sh" > crontab_script; sudo crontab crontab_script
+    cat <<< "@reboot /home/barraguesh/Tech\ stuff/Scripts/papirus-folders-color.sh" > crontab_script; sudo crontab crontab_script
     
     #Cursor
     git clone https://github.com/mustafaozhan/Breeze-Adapta-Cursor.git
