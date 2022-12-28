@@ -103,7 +103,6 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 
 gsettings set org.gnome.desktop.interface enable-hot-corners true
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 gsettings set org.gnome.software download-updates-notify false
-dconf write /org/gtk/settings/file-chooser/sort-directories-first true
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us+altgr-intl')]"
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'nothing'
 gsettings set org.gnome.desktop.privacy remember-recent-files true
@@ -112,6 +111,7 @@ gsettings set org.gnome.desktop.privacy remove-old-trash-files true
 gsettings set org.gnome.desktop.privacy remove-old-temp-files true
 gsettings set org.gnome.desktop.privacy old-files-age "uint32 14"
 gsettings set org.gnome.shell had-bluetooth-devices-setup true
+dconf write /org/gtk/gtk4/settings/file-chooser/sort-directories-first true
 
 #Night light
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
