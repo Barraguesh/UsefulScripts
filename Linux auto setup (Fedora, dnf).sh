@@ -111,6 +111,7 @@ gsettings set org.gnome.desktop.privacy remove-old-trash-files true
 gsettings set org.gnome.desktop.privacy remove-old-temp-files true
 gsettings set org.gnome.desktop.privacy old-files-age "uint32 14"
 gsettings set org.gnome.shell had-bluetooth-devices-setup true
+gsettings set org.gnome.nautilus.preferences show-delete-permanently true
 dconf write /org/gtk/gtk4/settings/file-chooser/sort-directories-first true
 
 #Night light
@@ -168,7 +169,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     firefox 'https://extensions.gnome.org/extension/906/sound-output-device-chooser/'
     firefox 'https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/'
     firefox 'https://extensions.gnome.org/extension/3193/blur-my-shell/'
-    #firefox 'https://extensions.gnome.org/extension/4222/hot-edge/'
     firefox 'https://extensions.gnome.org/extension/1319/gsconnect/'
 fi
 
