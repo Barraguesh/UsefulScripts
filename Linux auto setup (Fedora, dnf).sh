@@ -207,7 +207,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub org.gnome.Evince -y
     flatpak install flathub org.cryptomator.Cryptomator -y
     flatpak install flathub com.obsproject.Studio -y
-    flatpak install flathub org.chromium.Chromium -y
+    flatpak install flathub com.github.Eloston.UngoogledChromium -y
     flatpak install flathub com.stremio.Stremio -y
     flatpak install flathub org.videolan.VLC -y
     flatpak install flathub com.github.philip_scott.spice-up -y
