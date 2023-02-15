@@ -219,6 +219,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.mattjakeman.ExtensionManager -y
     flatpak install flathub com.github.tchx84.Flatseal -y
     flatpak install flathub org.gnome.TextEditor -y
+    flatpak install flathub com.visualstudio.code
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
@@ -229,7 +230,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     #flatpak install flathub org.musicbrainz.Picard -y
     #flatpak install flathub com.belmoussaoui.Obfuscate -y
     #sudo dnf install gnome-tweak-tool  -y
-    #flatpak install flathub com.visualstudio.code -y
 fi
 
 cd /tmp
