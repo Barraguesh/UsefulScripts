@@ -166,10 +166,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     
     firefox 'https://extensions.gnome.org/extension/3843/just-perfection/'
     firefox 'https://extensions.gnome.org/extension/615/appindicator-support/'
-    firefox 'https://extensions.gnome.org/extension/906/sound-output-device-chooser/'
     firefox 'https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/'
     firefox 'https://extensions.gnome.org/extension/3193/blur-my-shell/'
-    firefox 'https://extensions.gnome.org/extension/1319/gsconnect/'
+    firefox 'https://extensions.gnome.org/extension/2182/noannoyance/'
 fi
 
 read -p 'Install apps? (y/N) ' -n 1 -r
