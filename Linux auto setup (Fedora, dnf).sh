@@ -70,9 +70,9 @@ sudo systemctl enable crond.service
 sudo firewall-cmd --set-default-zone=block
 sudo firewall-cmd --reload
 
-#VAPI support (Fedora >37 doesn't include it)
-sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld --allowerasing -y
-sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld --allowerasing -y
+#VAPI support (Fedora >37 doesn't include it). Note: Seems that Flatpak apps bundle it so I won't be needing it while I use them.
+#sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld --allowerasing -y
+#sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld --allowerasing -y
 
 #Languages for LibreOffice
 sudo dnf install hunspell-es -y
