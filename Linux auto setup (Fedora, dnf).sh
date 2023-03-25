@@ -32,6 +32,11 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 
 sudo dnf upgrade --refresh -y
 
+#Git credentials
+sudo dnf install git -y
+git config --global user.email '25356150+Barraguesh@users.noreply.github.com'
+git config --global user.name 'Barraguesh'
+
 read -p 'Do you want to reboot? (y/N) ' -n 1 -r
 echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -77,10 +82,8 @@ sudo firewall-cmd --reload
 #Languages for LibreOffice
 sudo dnf install hunspell-es -y
 
-#Git credentials
-sudo dnf install git -y
-git config --global user.email '25356150+Barraguesh@users.noreply.github.com'
-git config --global user.name 'Barraguesh'
+#Appindicator support
+sudo dnf install gnome-shell-extension-appindicator -y
 
 echo '
 █▀▀ █▄░█ █▀█ █▀▄▀█ █▀▀   █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
@@ -165,7 +168,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sleep 5
     
     firefox 'https://extensions.gnome.org/extension/3843/just-perfection/'
-    firefox 'https://extensions.gnome.org/extension/615/appindicator-support/'
+    firefox 'https://extensions.gnome.org/extension/2890/tray-icons-reloaded/'
     firefox 'https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/'
     firefox 'https://extensions.gnome.org/extension/3193/blur-my-shell/'
     firefox 'https://extensions.gnome.org/extension/2182/noannoyance/'
