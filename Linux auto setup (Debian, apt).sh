@@ -44,6 +44,7 @@ fi
 read -p 'Install NextDNS? (y/N) ' -n 1 -r
 echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+    apt install curl -y
     sh -c "$(curl -sL https://nextdns.io/install)"
 fi
 
