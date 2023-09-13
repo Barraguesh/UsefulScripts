@@ -30,6 +30,9 @@ echo '
 █▄▄ █▄█ █░▀█ █▀░ █ █▄█ █▄█ █▀▄ █▀█ ░█░ █ █▄█ █░▀█
 '
 
+#Automatic updates
+apt install unattended-upgrades -y
+
 #Git credentials
 sudo apt install git -y
 git config --global user.email '25356150+Barraguesh@users.noreply.github.com'
@@ -179,6 +182,11 @@ fi
 
 cd /tmp
 sudo rm -rf AutoSetup
+
+#Remove and update stuff
+apt upgrade -y && apt update -y && apt autoclean -y && apt autopurge -y
+
+exit
 
 echo '
 █▀▀ █▄░█ █▀█ █▀▄▀█ █▀▀   █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
