@@ -30,6 +30,9 @@ echo '
 █▄▄ █▄█ █░▀█ █▀░ █ █▄█ █▄█ █▀▄ █▀█ ░█░ █ █▄█ █░▀█
 '
 
+#Update and clean install
+apt update -y && apt upgrade -y && apt autoclean -y && apt autopurge -y
+
 #Automatic updates
 apt install unattended-upgrades -y
 
