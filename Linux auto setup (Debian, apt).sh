@@ -45,6 +45,8 @@ read -p 'Are you dualbooting Windows? (y/N) ' -n 1 -r
 echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     timedatectl set-local-rtc 1 --adjust-system-clock
+    #OS prober for dualboot OS detection
+    apt install os-prober -y
 fi
 
 read -p 'Install NextDNS? (y/N) ' -n 1 -r
