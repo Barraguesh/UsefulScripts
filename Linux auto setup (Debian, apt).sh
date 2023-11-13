@@ -73,6 +73,9 @@ apt install ufw -y
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 
+#ClamAV
+sudo apt install clamav -y
+
 #VAPI support (Fedora >37 doesn't include it). Note: Seems that Flatpak apps bundle it so I won't be needing it while I use them.
 #sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld --allowerasing -y
 #sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld --allowerasing -y
