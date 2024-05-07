@@ -116,6 +116,7 @@ gsettings set org.gnome.desktop.privacy old-files-age "uint32 14"
 gsettings set org.gnome.shell had-bluetooth-devices-setup true
 gsettings set org.gnome.nautilus.preferences show-delete-permanently true
 dconf write /org/gtk/gtk4/settings/file-chooser/sort-directories-first true
+gsettings set org.gnome.desktop.wm.preferences focus-new-windows 'smart'
 
 #Night light
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
@@ -137,8 +138,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     #General theme and Shell, use default
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
     
-    #Applications and Flatpak support
-    flatpak install flathub org.gtk.Gtk3theme.Adwaita-Dark -y
+    #Applications and Flatpak support NO LONGER NEEDED, leaving it just in case
+    #flatpak install flathub org.gtk.Gtk3theme.Adwaita-Dark -y
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 
     #Icons
@@ -169,9 +170,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     
     firefox 'https://extensions.gnome.org/extension/3843/just-perfection/'
     firefox 'https://extensions.gnome.org/extension/2890/tray-icons-reloaded/'
-    firefox 'https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/'
     firefox 'https://extensions.gnome.org/extension/3193/blur-my-shell/'
-    firefox 'https://extensions.gnome.org/extension/2182/noannoyance/'
 fi
 
 read -p 'Install apps? (y/N) ' -n 1 -r
