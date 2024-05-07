@@ -6,6 +6,8 @@
 #Script by Barraguesh. Text made with https://fsymbols.com/generators/tarty/
 #
 
+#TEST SCRIPT FOR AUTODELETE OF DOWNLOADS OLDER THAN 30 DAYS: find $HOME/Downloads/* -type d -ctime +30 -exec rm -rf {} \;
+
 echo 'Fullscreen is recomended for readability'
 sleep 2
 
