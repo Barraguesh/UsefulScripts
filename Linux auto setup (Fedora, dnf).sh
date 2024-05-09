@@ -87,6 +87,9 @@ sudo dnf install hunspell-es -y
 #Appindicator support
 sudo dnf install gnome-shell-extension-appindicator -y
 
+#Full ffmpeg
+sudo dnf install ffmpeg --allowerasing
+
 echo '
 █▀▀ █▄░█ █▀█ █▀▄▀█ █▀▀   █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
 █▄█ █░▀█ █▄█ █░▀░█ ██▄   ▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█ ▄█
