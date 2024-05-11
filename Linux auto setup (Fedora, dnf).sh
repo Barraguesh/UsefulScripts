@@ -6,7 +6,7 @@
 #Script by Barraguesh. Text made with https://fsymbols.com/generators/tarty/
 #
 
-#TEST SCRIPT FOR AUTODELETE OF DOWNLOADS OLDER THAN 30 DAYS: find $HOME/Downloads/* -type d -ctime +30 | xargs rm -rf
+#TEST SCRIPT FOR AUTODELETE OF DOWNLOADS OLDER THAN 30 DAYS: find $HOME/Downloads/* -mtime +30 -exec rm -r {} +
 
 echo 'Fullscreen is recomended for readability'
 sleep 2
@@ -90,6 +90,10 @@ sudo dnf install gnome-shell-extension-appindicator -y
 #Full ffmpeg
 sudo dnf install ffmpeg --allowerasing
 
+#Crontab scripts
+cat <<< "@reboot /home/barraguesh/Tech\ stuff/Scripts/papirus-folders-color.sh" > crontab_script; sudo crontab crontab_script
+(sudo crontab -l ; echo "@reboot find /home/barraguesh/Downloads/* -mtime +30 -exec rm -r {} +")| sudo crontab -
+
 echo '
 █▀▀ █▄░█ █▀█ █▀▄▀█ █▀▀   █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
 █▄█ █░▀█ █▄█ █░▀░█ ██▄   ▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█ ▄█
@@ -153,8 +157,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     
     #Papirus folders for custom folder colors
     wget -qO- https://git.io/papirus-folders-install | sh
-    papirus-folders -C teal
-    cat <<< "@reboot /home/barraguesh/Tech\ stuff/Scripts/papirus-folders-color.sh" > crontab_script; sudo crontab crontab_script
+    papirus-folders -C teal    
     
     #Cursor
     git clone https://github.com/mustafaozhan/Breeze-Adapta-Cursor.git
