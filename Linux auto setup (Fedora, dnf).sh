@@ -209,7 +209,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     
     #Flatpak apps
     flatpak install flathub org.mozilla.firefox -y
-    flatpak install flathub io.github.ungoogled_software.ungoogled_chromium -y
+    flatpak install flathub org.chromium.Chromium -y
     flatpak install org.freedesktop.Platform.ffmpeg-full -y
     flatpak install flathub org.gnome.Music -y
     flatpak install flathub org.gnome.Photos -y
