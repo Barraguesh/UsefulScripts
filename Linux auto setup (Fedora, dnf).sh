@@ -133,7 +133,7 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature "u
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic true
 
 #Dock personalization (gsettings get org.gnome.shell favorite-apps)
-gsettings set org.gnome.shell favorite-apps "['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'com.valvesoftware.Steam.desktop', 'com.stremio.Stremio.desktop']"
+gsettings set org.gnome.shell favorite-apps "['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'com.valvesoftware.Steam.desktop', 'com.stremio.Stremio.desktop', 'code.desktop']"
 echo 'Settings applied.'
 
 read -p 'Set up themes? (y/N) ' -n 1 -r
@@ -227,7 +227,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.mattjakeman.ExtensionManager -y
     flatpak install flathub com.github.tchx84.Flatseal -y
     flatpak install flathub org.gnome.TextEditor -y
-    flatpak install flathub com.visualstudio.code
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
