@@ -179,7 +179,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
     flatpak install com.valvesoftware.Steam.CompatibilityTool.Proton-GE -y
-    sudo dnf install steam-devices -y
+    sudo apt install steam-devices -y
     
     #Useful apps not marked for install
     #flatpak install flathub org.musicbrainz.Picard -y
