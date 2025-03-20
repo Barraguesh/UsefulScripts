@@ -68,6 +68,11 @@ fi
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak remote-modify --enable flathub
 
+#Disable Fedora flatpak repo
+flatpak remote-modify fedora --disable
+flatpak remote-modify fedora-testing --disable
+#flatpak remote-delete fedora
+
 #Cron
 sudo dnf install cronie -y
 sudo systemctl start crond.service
@@ -190,17 +195,14 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     '
     sleep 5
     
-    #Removal
+    #Removal of unwanted apps
     sudo dnf remove gedit -y
-    sudo dnf remove evince -y
+    sudo dnf remove gnome-text-editor -y
     sudo dnf remove firefox -y
     sudo dnf remove totem -y
-    sudo dnf remove gnome-photos -y
-    sudo dnf remove libreoffice* -y
     sudo dnf remove rhythmbox -y
-    sudo dnf remove gnome-text-editor -y
     
-    #Terminal apps
+    #Non flatpak apps
     sudo dnf install neofetch -y
     sudo dnf install openssl -y
     sudo dnf install htop -y
@@ -212,9 +214,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub org.chromium.Chromium -y
     flatpak install org.freedesktop.Platform.ffmpeg-full -y
     flatpak install flathub org.gnome.Music -y
-    flatpak install flathub org.gnome.Photos -y
-    flatpak install flathub org.libreoffice.LibreOffice -y
-    flatpak install flathub org.gnome.Evince -y
     flatpak install flathub org.cryptomator.Cryptomator -y
     flatpak install flathub com.obsproject.Studio -y
     flatpak install flathub com.stremio.Stremio -y
@@ -226,7 +225,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub org.gnome.Extensions -y
     flatpak install flathub com.mattjakeman.ExtensionManager -y
     flatpak install flathub com.github.tchx84.Flatseal -y
-    flatpak install flathub org.gnome.TextEditor -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
@@ -234,9 +232,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     #sudo dnf install steam-devices -y
     
     #Useful apps not marked for install
+    #sudo dnf install gnome-tweak-tool  -y
     #flatpak install flathub org.musicbrainz.Picard -y
     #flatpak install flathub com.belmoussaoui.Obfuscate -y
-    #sudo dnf install gnome-tweak-tool  -y
 fi
 
 cd /tmp
