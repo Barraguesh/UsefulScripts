@@ -39,7 +39,7 @@ sudo dnf install git -y
 git config --global user.email '25356150+Barraguesh@users.noreply.github.com'
 git config --global user.name 'Barraguesh'
 
-read -p 'Do you want to reboot? (y/N) ' -n 1 -r
+read -p 'Do you want to reboot (recommended on first run)? (y/N) ' -n 1 -r
 echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo reboot
@@ -82,18 +82,21 @@ sudo systemctl enable crond.service
 sudo firewall-cmd --set-default-zone=block
 sudo firewall-cmd --reload
 
-#VAPI support (Fedora >37 doesn't include it). Note: Seems that Flatpak apps bundle it so I won't be needing it while I use them.
-#sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld --allowerasing -y
-#sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld --allowerasing -y
+#Fedora >37 messed codec stuff up, getting how to from: https://rpmfusion.org/Howto/Multimedia?highlight=%28%5CbCategoryHowto%5Cb%29
+#More docs in case I need them in the future: https://fedoraproject.org/wiki/Firefox_Hardware_acceleration
+#Replace ffmpeg-free for a full version
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing -y
+#Additional codecs support
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+#Hardware Accelerated Codec - VAPI support (AMD)
+sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y
+sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
 
 #Languages for LibreOffice
 sudo dnf install hunspell-es -y
 
 #Appindicator support
 sudo dnf install gnome-shell-extension-appindicator -y
-
-#Full ffmpeg
-sudo dnf install ffmpeg --allowerasing
 
 #Crontab scripts
 cat <<< "@reboot /home/barraguesh/Tech\ stuff/Scripts/papirus-folders-color.sh" > crontab_script; sudo crontab crontab_script
@@ -198,7 +201,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     #Removal of unwanted apps
     sudo dnf remove gedit -y
     sudo dnf remove gnome-text-editor -y
-    sudo dnf remove firefox -y
     sudo dnf remove totem -y
     sudo dnf remove rhythmbox -y
     
@@ -210,9 +212,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf install evolution -y
     
     #Flatpak apps
-    flatpak install flathub org.mozilla.firefox -y
-    flatpak install flathub org.chromium.Chromium -y
-    flatpak install org.freedesktop.Platform.ffmpeg-full -y
     flatpak install flathub org.gnome.Music -y
     flatpak install flathub org.cryptomator.Cryptomator -y
     flatpak install flathub com.obsproject.Studio -y
@@ -235,6 +234,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     #sudo dnf install gnome-tweak-tool  -y
     #flatpak install flathub org.musicbrainz.Picard -y
     #flatpak install flathub com.belmoussaoui.Obfuscate -y
+    #flatpak install org.freedesktop.Platform.ffmpeg-full -y
 fi
 
 cd /tmp
