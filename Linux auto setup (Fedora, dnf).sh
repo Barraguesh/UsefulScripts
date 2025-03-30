@@ -223,6 +223,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.transmissionbt.Transmission -y
     flatpak install flathub org.gnome.Extensions -y
     flatpak install flathub com.mattjakeman.ExtensionManager -y
+    flatpak install flathub com.calibre_ebook.calibre -y
     flatpak install flathub com.github.tchx84.Flatseal -y
     
     #Steam and Proton GE
