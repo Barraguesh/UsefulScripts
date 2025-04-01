@@ -199,7 +199,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sleep 5
     
     #Removal of unwanted apps
-    sudo dnf remove firefox -y
     sudo dnf remove gedit -y
     sudo dnf remove gnome-text-editor -y
     sudo dnf remove totem -y
@@ -213,7 +212,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf install evolution -y
     
     #Flatpak apps
-    flatpak install flathub org.mozilla.firefox -y
     flatpak install flathub org.gnome.Music -y
     flatpak install flathub org.cryptomator.Cryptomator -y
     flatpak install flathub com.obsproject.Studio -y
