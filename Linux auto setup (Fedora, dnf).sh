@@ -134,6 +134,7 @@ gsettings set org.gnome.shell had-bluetooth-devices-setup true
 gsettings set org.gnome.nautilus.preferences show-delete-permanently true
 dconf write /org/gtk/gtk4/settings/file-chooser/sort-directories-first true
 gsettings set org.gnome.desktop.wm.preferences focus-new-windows 'smart'
+gsettings set org.gnome.desktop.interface clock-format '24h'
 
 #Night light
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
