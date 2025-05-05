@@ -228,6 +228,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.calibre_ebook.calibre -y
     flatpak install flathub com.github.tchx84.Flatseal -y
     flatpak install flathub md.obsidian.Obsidian -y
+    flatpak install flathub com.visualstudio.code -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
