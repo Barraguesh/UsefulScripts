@@ -212,6 +212,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf install htop -y
     sudo dnf install lm_sensors -y
     sudo dnf install evolution -y
+    sudo dnf install gnome-tweak-tool  -y
     
     #Flatpak apps
     flatpak install flathub org.gnome.Music -y
@@ -226,6 +227,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub org.gnome.Extensions -y
     flatpak install flathub com.calibre_ebook.calibre -y
     flatpak install flathub com.github.tchx84.Flatseal -y
+    flatpak install flathub md.obsidian.Obsidian -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
@@ -233,7 +235,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     #sudo dnf install steam-devices -y
     
     #Useful apps not marked for install
-    #sudo dnf install gnome-tweak-tool  -y
     #flatpak install flathub org.musicbrainz.Picard -y
     #flatpak install flathub com.belmoussaoui.Obfuscate -y
     #flatpak install org.freedesktop.Platform.ffmpeg-full -y
