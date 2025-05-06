@@ -100,7 +100,7 @@ sudo dnf install gnome-shell-extension-appindicator -y
 
 #Crontab scripts
 cat <<< "@reboot /home/barraguesh/Tech\ stuff/Scripts/papirus-folders-color.sh" > crontab_script; sudo crontab crontab_script
-(sudo crontab -l ; echo "@reboot find /home/barraguesh/Downloads/* -mtime +30 -exec rm -r {} +")| sudo crontab -
+(sudo crontab -l ; echo "@reboot find /home/barraguesh/Downloads/* -maxdepth 0 -mtime +30 -exec rm -r {} +")| sudo crontab -
 
 echo '
 █▀▀ █▄░█ █▀█ █▀▄▀█ █▀▀   █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
