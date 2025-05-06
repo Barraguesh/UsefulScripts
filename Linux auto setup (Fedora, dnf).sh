@@ -190,6 +190,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     firefox 'https://extensions.gnome.org/extension/3193/blur-my-shell/'
     firefox 'https://extensions.gnome.org/extension/1319/gsconnect/'
     firefox 'https://extensions.gnome.org/extension/5660/weather-or-not/'
+    firefox 'https://extensions.gnome.org/extension/307/dash-to-dock/'
 fi
 
 read -p 'Install apps? (y/N) ' -n 1 -r
