@@ -216,6 +216,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf install lm_sensors -y
     sudo dnf install evolution -y
     sudo dnf install gnome-tweak-tool  -y
+    sudo dnf install solaar -y
     
     #Flatpak apps
     flatpak install flathub org.gnome.Music -y
