@@ -208,6 +208,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf remove gnome-text-editor -y
     sudo dnf remove totem -y
     sudo dnf remove rhythmbox -y
+    sudo dnf remove libreoffice* -y
     
     #Non flatpak apps
     sudo dnf install neofetch -y
@@ -234,6 +235,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub md.obsidian.Obsidian -y
     flatpak install flathub com.visualstudio.code -y
     flatpak install flathub com.usebottles.bottles -y
+    flatpak install flathub org.libreoffice.LibreOffice -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
