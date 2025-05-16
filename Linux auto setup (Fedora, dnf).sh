@@ -79,7 +79,7 @@ sudo systemctl start crond.service
 sudo systemctl enable crond.service
 
 #Firewalld
-sudo firewall-cmd --set-default-zone=block
+sudo firewall-cmd --set-default-zone=home
 sudo firewall-cmd --reload
 
 #Fedora >37 messed codec stuff up, getting how to from: https://rpmfusion.org/Howto/Multimedia?highlight=%28%5CbCategoryHowto%5Cb%29
