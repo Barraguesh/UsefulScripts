@@ -184,11 +184,14 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sleep 5
     
     firefox 'https://extensions.gnome.org/extension/3843/just-perfection/'
-    firefox 'https://extensions.gnome.org/extension/2890/tray-icons-reloaded/'
+    firefox 'https://extensions.gnome.org/extension/615/appindicator-support/'
     firefox 'https://extensions.gnome.org/extension/3193/blur-my-shell/'
     firefox 'https://extensions.gnome.org/extension/5660/weather-or-not/'
     firefox 'https://extensions.gnome.org/extension/307/dash-to-dock/'
     firefox 'https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/'
+    firefox 'https://extensions.gnome.org/extension/6385/steal-my-focus-window/'
+    #Solaar tray icon is broken, with this extension that is objectively better for tray icons
+    #firefox 'https://extensions.gnome.org/extension/2890/tray-icons-reloaded/'
 fi
 
 read -p 'Install apps? (y/N) ' -n 1 -r
