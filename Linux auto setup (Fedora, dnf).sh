@@ -218,6 +218,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf install evolution -y
     sudo dnf install gnome-tweak-tool  -y
     sudo dnf install solaar -y
+    sudo dnf install wine -y
     
     #Flatpak apps
     flatpak install flathub org.gnome.Music -y
@@ -234,7 +235,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.github.tchx84.Flatseal -y
     flatpak install flathub md.obsidian.Obsidian -y
     flatpak install flathub com.visualstudio.code -y
-    flatpak install flathub com.usebottles.bottles -y
     flatpak install flathub org.libreoffice.LibreOffice -y
     
     #Steam and Proton GE
