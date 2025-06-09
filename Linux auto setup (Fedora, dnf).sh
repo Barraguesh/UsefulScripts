@@ -27,8 +27,8 @@ echo '
 █▄▄ █▄█ █░▀█ █▀░ █ █▄█ █▄█ █▀▄ █▀█ ░█░ █ █▄█ █░▀█
 '
 
-#RPM fusion
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+#RPM fusion - For now, don't use, too many package conflicts for my taste
+#sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 
 sudo dnf upgrade --refresh -y
 
@@ -80,15 +80,17 @@ sudo systemctl enable crond.service
 sudo firewall-cmd --set-default-zone=home
 sudo firewall-cmd --reload
 
+#THIS WAS MESSY, got all kinds of conflicts after a month of using a newly installed Fedora 42... Gonna skip this and use Firefox flatpak for now
+
 #Fedora >37 messed codec stuff up, getting how to from: https://rpmfusion.org/Howto/Multimedia?highlight=%28%5CbCategoryHowto%5Cb%29
 #More docs in case I need them in the future: https://fedoraproject.org/wiki/Firefox_Hardware_acceleration
 #Replace ffmpeg-free for a full version
-sudo dnf swap ffmpeg-free ffmpeg --allowerasing -y
+#sudo dnf swap ffmpeg-free ffmpeg --allowerasing -y
 #Additional codecs support
-sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+#sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 #Hardware Accelerated Codec - VAPI support (AMD)
-sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y
-sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
+#sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y
+#sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
 
 #Languages for LibreOffice
 sudo dnf install hunspell-es -y
@@ -209,6 +211,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf remove totem -y
     sudo dnf remove rhythmbox -y
     sudo dnf remove libreoffice* -y
+    sudo dnf remove firefox -y
     
     #Non flatpak apps
     sudo dnf install neofetch -y
@@ -221,6 +224,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf install wine -y
     
     #Flatpak apps
+    flatpak install flathub org.mozilla.firefox -y
     flatpak install flathub org.gnome.Music -y
     flatpak install flathub org.cryptomator.Cryptomator -y
     flatpak install flathub com.obsproject.Studio -y
