@@ -192,7 +192,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     firefox 'https://extensions.gnome.org/extension/307/dash-to-dock/'
     firefox 'https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/'
     firefox 'https://extensions.gnome.org/extension/6385/steal-my-focus-window/'
-    #Solaar tray icon is broken, with this extension that is objectively better for tray icons
+    #Solaar tray icon is broken, with this extension, that is objectively better for tray icons
     #firefox 'https://extensions.gnome.org/extension/2890/tray-icons-reloaded/'
 fi
 
@@ -241,10 +241,11 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.visualstudio.code -y
     flatpak install flathub org.libreoffice.LibreOffice -y
     flatpak install flathub org.gnome.NetworkDisplays -y
+    flatpak install flathub de.swsnr.pictureoftheday -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
-    flatpak install flathub net.davidotek.pupgui2 -y
+    flatpak install com.valvesoftware.Steam.CompatibilityTool.Proton-GE -y
     #sudo dnf install steam-devices -y
     
     #Useful apps not marked for install
