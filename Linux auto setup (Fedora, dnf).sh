@@ -212,6 +212,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf remove rhythmbox -y
     sudo dnf remove libreoffice* -y
     sudo dnf remove firefox -y
+    sudo dnf remove evince -y
     
     #Non flatpak apps
     sudo dnf install neofetch -y
@@ -225,6 +226,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     
     #Flatpak apps
     flatpak install flathub org.mozilla.firefox -y
+    flatpak install flathub org.gnome.Papers -y
     flatpak install flathub org.gnome.Music -y
     flatpak install flathub org.cryptomator.Cryptomator -y
     flatpak install flathub com.obsproject.Studio -y
