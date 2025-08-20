@@ -223,6 +223,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf install gnome-tweak-tool  -y
     sudo dnf install solaar -y
     sudo dnf install wine -y
+    sudo dnf install gnome-music -y
     
     #Flatpak apps
     flatpak install flathub org.mozilla.firefox -y
