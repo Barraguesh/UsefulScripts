@@ -244,6 +244,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub org.libreoffice.LibreOffice -y
     flatpak install flathub org.gnome.NetworkDisplays -y
     flatpak install flathub io.missioncenter.MissionCenter -y
+    flatpak install flathub io.github.nate_xyz.Resonance -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
