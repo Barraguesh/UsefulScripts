@@ -248,7 +248,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub io.github.nate_xyz.Resonance -y
     flatpak install flathub org.musicbrainz.Picard -y
     flatpak install flathub com.bitwarden.desktop -y
-    flatpak install flathub net.codelogistics.webapps -y
     flatpak install flathub com.binarynonsense.acbr -y
     
     #Steam and Proton GE
