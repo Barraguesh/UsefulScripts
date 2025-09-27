@@ -213,6 +213,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf remove libreoffice* -y
     sudo dnf remove firefox -y
     sudo dnf remove evince -y
+    sudo dnf remove gnome-weather -y
     
     #Non flatpak apps
     sudo dnf install neofetch -y
@@ -250,6 +251,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub org.musicbrainz.Picard -y
     flatpak install flathub com.bitwarden.desktop -y
     flatpak install flathub com.binarynonsense.acbr -y
+    flatpak install flathub io.github.amit9838.mousam -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
