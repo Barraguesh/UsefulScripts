@@ -77,6 +77,8 @@ sudo systemctl start crond.service
 sudo systemctl enable crond.service
 
 #Firewalld
+#Local Filen webdav port
+sudo firewall-cmd --zone=home --add-port=1900/tcp --permanent
 sudo firewall-cmd --set-default-zone=home
 sudo firewall-cmd --reload
 
