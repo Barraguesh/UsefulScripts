@@ -11,7 +11,7 @@ sudo dnf upgrade --refresh -y
 echo "System updates have been completed. What would you like to do next?"
 echo "1. Reboot"
 echo "2. Power-off"
-echo "3. Exit the Terminal"
+echo "3. Exit"
 
 read choice
 
