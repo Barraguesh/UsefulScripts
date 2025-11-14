@@ -49,12 +49,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     timedatectl set-local-rtc 1 --adjust-system-clock
 fi
 
-read -p 'Install NextDNS? (y/N) ' -n 1 -r
-echo -e "\n"
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    sh -c "$(curl -sL https://nextdns.io/install)"
-fi
-
 read -p 'Install auto-cpufreq? (y/N) ' -n 1 -r
 echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then
