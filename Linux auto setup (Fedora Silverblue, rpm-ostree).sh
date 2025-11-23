@@ -46,8 +46,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     rpm-ostree install openssl -y
     rpm-ostree install htop -y
     rpm-ostree install lm_sensors -y
-    rpm-ostree install gnome-tweak-tool  -y
-    rpm-ostree install gnome-music -y
     systemctl reboot
 fi
 
@@ -197,14 +195,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.github.tchx84.Flatseal -y
     flatpak install flathub md.obsidian.Obsidian -y
     flatpak install flathub com.visualstudio.code -y
-    flatpak install flathub org.libreoffice.LibreOffice -y
+    #flatpak install flathub org.libreoffice.LibreOffice -y
     flatpak install flathub org.gnome.NetworkDisplays -y
     flatpak install flathub io.missioncenter.MissionCenter -y
-    flatpak install flathub io.github.nate_xyz.Resonance -y
     flatpak install flathub org.musicbrainz.Picard -y
     flatpak install flathub com.bitwarden.desktop -y
     flatpak install flathub com.binarynonsense.acbr -y
-    flatpak install flathub io.github.amit9838.mousam -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
