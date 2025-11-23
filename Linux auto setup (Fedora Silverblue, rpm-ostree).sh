@@ -76,48 +76,94 @@ sudo firewall-cmd --reload
 #cat <<< "@reboot /home/barraguesh/Tech\ stuff/Scripts/papirus-folders-color.sh" > crontab_script; sudo crontab crontab_script
 #(sudo crontab -l ; echo "@reboot find /home/barraguesh/Downloads/* -maxdepth 0 -mtime +60 -exec rm -r {} +")| sudo crontab -
 
-echo '
-█▀▀ █▄░█ █▀█ █▀▄▀█ █▀▀   █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
-█▄█ █░▀█ █▄█ █░▀░█ ██▄   ▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█ ▄█
-'
+read -p 'Install extensions? (y/N) ' -n 1 -r
+echo -e "\n"
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo '
+    █▀▀ ▀▄▀ ▀█▀ █▀▀ █▄░█ █▀ █ █▀█ █▄░█ █▀
+    ██▄ █░█ ░█░ ██▄ █░▀█ ▄█ █ █▄█ █░▀█ ▄█
+    '
+    sleep 5
+    
+    firefox 'https://extensions.gnome.org/extension/3843/just-perfection/'
+    firefox 'https://extensions.gnome.org/extension/2890/tray-icons-reloaded/'
+    firefox 'https://extensions.gnome.org/extension/3193/blur-my-shell/'
+    firefox 'https://extensions.gnome.org/extension/5660/weather-or-not/'
+    firefox 'https://extensions.gnome.org/extension/307/dash-to-dock/'
+    firefox 'https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/'
+    firefox 'https://extensions.gnome.org/extension/6385/steal-my-focus-window/'
+fi
 
-#Use "dconf watch /" and use tweaks/tools to see changes and create commands
-gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
-gsettings set org.gnome.desktop.interface font-name 'Liberation Sans 12'
-gsettings set org.gnome.desktop.interface document-font-name 'Liberation Sans 12'
-gsettings set org.gnome.desktop.interface monospace-font-name 'Liberation Mono 12'
-gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Liberation Sans Bold 12'
-gsettings set org.gnome.desktop.peripherals.touchpad click-method 'areas'
-gsettings set org.gnome.desktop.interface clock-show-weekday true
-gsettings set org.gnome.desktop.datetime automatic-timezone true
-gsettings set org.gnome.mutter center-new-windows true
-gsettings set org.gnome.desktop.session idle-delay "uint32 600"
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'suspend'
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 7200
-gsettings set org.gnome.desktop.interface enable-hot-corners true
-gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
-gsettings set org.gnome.software download-updates-notify false
-gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us+altgr-intl')]"
-gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'nothing'
-gsettings set org.gnome.desktop.privacy remember-recent-files true
-gsettings set org.gnome.desktop.privacy recent-files-max-age 7
-gsettings set org.gnome.desktop.privacy remove-old-trash-files true
-gsettings set org.gnome.desktop.privacy remove-old-temp-files true
-gsettings set org.gnome.desktop.privacy old-files-age "uint32 14"
-gsettings set org.gnome.shell had-bluetooth-devices-setup true
-gsettings set org.gnome.nautilus.preferences show-delete-permanently true
-dconf write /org/gtk/gtk4/settings/file-chooser/sort-directories-first true
-gsettings set org.gnome.desktop.wm.preferences focus-new-windows 'smart'
-gsettings set org.gnome.desktop.interface clock-format '24h'
+read -p 'Setup Gnome? (y/N) ' -n 1 -r
+echo -e "\n"
+    echo '
+    █▀▀ █▄░█ █▀█ █▀▄▀█ █▀▀   █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
+    █▄█ █░▀█ █▄█ █░▀░█ ██▄   ▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█ ▄█
+    '
+    
+    #Use "dconf watch /" and use tweaks/tools to see changes and create commands
+    gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
+    gsettings set org.gnome.desktop.interface font-name 'Liberation Sans 12'
+    gsettings set org.gnome.desktop.interface document-font-name 'Liberation Sans 12'
+    gsettings set org.gnome.desktop.interface monospace-font-name 'Liberation Mono 12'
+    gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Liberation Sans Bold 12'
+    gsettings set org.gnome.desktop.peripherals.touchpad click-method 'areas'
+    gsettings set org.gnome.desktop.interface clock-show-weekday true
+    gsettings set org.gnome.desktop.datetime automatic-timezone true
+    gsettings set org.gnome.mutter center-new-windows true
+    gsettings set org.gnome.desktop.session idle-delay "uint32 600"
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'suspend'
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 7200
+    gsettings set org.gnome.desktop.interface enable-hot-corners true
+    gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+    gsettings set org.gnome.software download-updates-notify false
+    gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us+altgr-intl')]"
+    gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'nothing'
+    gsettings set org.gnome.desktop.privacy remember-recent-files true
+    gsettings set org.gnome.desktop.privacy recent-files-max-age 7
+    gsettings set org.gnome.desktop.privacy remove-old-trash-files true
+    gsettings set org.gnome.desktop.privacy remove-old-temp-files true
+    gsettings set org.gnome.desktop.privacy old-files-age "uint32 14"
+    gsettings set org.gnome.shell had-bluetooth-devices-setup true
+    gsettings set org.gnome.nautilus.preferences show-delete-permanently true
+    dconf write /org/gtk/gtk4/settings/file-chooser/sort-directories-first true
+    gsettings set org.gnome.desktop.wm.preferences focus-new-windows 'smart'
+    gsettings set org.gnome.desktop.interface clock-format '24h'
+    
+    #Night light
+    gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
+    gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature "uint32 1700"
+    gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic true
+    
+    #Dock personalization (gsettings get org.gnome.shell favorite-apps)
+    gsettings set org.gnome.shell favorite-apps "['org.gnome.Ptyxis.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'md.obsidian.Obsidian.desktop', 'com.valvesoftware.Steam.desktop', 'com.stremio.Stremio.desktop', 'com.visualstudio.code.desktop']"
 
-#Night light
-gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
-gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature "uint32 1700"
-gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic true
-
-#Dock personalization (gsettings get org.gnome.shell favorite-apps)
-gsettings set org.gnome.shell favorite-apps "['org.gnome.Ptyxis.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'md.obsidian.Obsidian.desktop', 'com.valvesoftware.Steam.desktop', 'com.stremio.Stremio.desktop', 'com.visualstudio.code.desktop']"
-echo 'Settings applied.'
+    #Extensions config
+    dconf write /org/gnome/shell/extensions/just-perfection/window-demands-attention-focus true
+    dconf write /org/gnome/shell/extensions/just-perfection/world-clock false
+    dconf write /org/gnome/shell/extensions/just-perfection/search false
+    dconf write /org/gnome/shell/extensions/just-perfection/startup-status 0
+    
+    dconf write /org/gnome/shell/extensions/blur-my-shell/panel/blur true
+    dconf write /org/gnome/shell/extensions/blur-my-shell/applications/sigma 5
+    dconf write /org/gnome/shell/extensions/blur-my-shell/applications/opacity 200
+    dconf write /org/gnome/shell/extensions/blur-my-shell/applications/dynamic-opacity true
+    dconf write /org/gnome/shell/extensions/blur-my-shell/applications/enable-all true
+    
+    dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed false
+    dconf write /org/gnome/shell/extensions/dash-to-dock/transparency-mode 'DYNAMIC'
+    dconf write /org/gnome/shell/extensions/dash-to-dock/click-action 'minimize'
+    dconf write /org/gnome/shell/extensions/dash-to-dock/hot-keys false
+    dconf write /org/gnome/shell/extensions/dash-to-dock/height-fraction 0.90000000000000002
+    dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 64
+    
+    dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-size 18
+    dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-padding-horizontal 6
+    dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-margin-horizontal 2
+    dconf write /org/gnome/shell/extensions/trayIconsReloaded/tray-margin-right 0
+    
+    echo 'Settings applied.'
+fi
 
 read -p 'Set up themes? (y/N) ' -n 1 -r
 echo -e "\n"
@@ -147,24 +193,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     gsettings set org.gnome.desktop.interface cursor-theme 'Breeze Adapta'
     echo 'Sifr (dark), recommended icon theme for Libreoffice with dark themes)'
     sleep 20
-fi
-
-read -p 'Install extensions? (y/N) ' -n 1 -r
-echo -e "\n"
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    echo '
-    █▀▀ ▀▄▀ ▀█▀ █▀▀ █▄░█ █▀ █ █▀█ █▄░█ █▀
-    ██▄ █░█ ░█░ ██▄ █░▀█ ▄█ █ █▄█ █░▀█ ▄█
-    '
-    sleep 5
-    
-    firefox 'https://extensions.gnome.org/extension/3843/just-perfection/'
-    firefox 'https://extensions.gnome.org/extension/615/appindicator-support/'
-    firefox 'https://extensions.gnome.org/extension/3193/blur-my-shell/'
-    firefox 'https://extensions.gnome.org/extension/5660/weather-or-not/'
-    firefox 'https://extensions.gnome.org/extension/307/dash-to-dock/'
-    firefox 'https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/'
-    firefox 'https://extensions.gnome.org/extension/6385/steal-my-focus-window/'
 fi
 
 read -p 'Install apps? (y/N) ' -n 1 -r
