@@ -69,12 +69,31 @@ flatpak remote-modify --enable flathub
 sudo firewall-cmd --set-default-zone=home
 sudo firewall-cmd --reload
 
+# Downloads cleanup script
+cat >> ./downloads_cleanup.service << 'END'
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/bash -c “find /home/barraguesh/Downloads/* -maxdepth 0 -mtime +60 -exec rm -r {} +”
 
-## MIGRATE TO SYSTEMD TODO
+[Install]
+WantedBy=multi-user.target
+END
+sudo cp ./downloads_cleanup.service /etc/systemd/system/
+sudo systemctl enable downloads_cleanup.service
 
-#Crontab scripts
-#cat <<< "@reboot /home/barraguesh/Tech\ stuff/Scripts/papirus-folders-color.sh" > crontab_script; sudo crontab crontab_script
-#(sudo crontab -l ; echo "@reboot find /home/barraguesh/Downloads/* -maxdepth 0 -mtime +60 -exec rm -r {} +")| sudo crontab -
+# Papirus folders script
+cat >> ./papirus_folders_color.service << 'END'
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/bash -c “/home/barraguesh/Tech\ stuff/Scripts/papirus-folders-color.sh”
+
+[Install]
+WantedBy=multi-user.target
+END
+sudo cp ./papirus_folders_color.service /etc/systemd/system/
+sudo systemctl enable papirus_folders_color.service
 
 read -p 'Install extensions? (y/N) ' -n 1 -r
 echo -e "\n"
