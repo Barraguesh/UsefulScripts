@@ -148,14 +148,15 @@ echo -e "\n"
     dconf write /org/gtk/gtk4/settings/file-chooser/sort-directories-first true
     gsettings set org.gnome.desktop.wm.preferences focus-new-windows 'smart'
     gsettings set org.gnome.desktop.interface clock-format '24h'
-    
+    dconf write /org/gnome/desktop/peripherals/mouse/speed0.45299145299145294
+
     #Night light
     gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
     gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature "uint32 1700"
     gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic true
     
     #Dock personalization (gsettings get org.gnome.shell favorite-apps)
-    gsettings set org.gnome.shell favorite-apps "['org.gnome.Ptyxis.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'md.obsidian.Obsidian.desktop', 'com.valvesoftware.Steam.desktop', 'com.stremio.Stremio.desktop', 'com.visualstudio.code.desktop']"
+    gsettings set org.gnome.shell favorite-apps "['org.gnome.Ptyxis.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'com.bitwarden.desktop.desktop', 'md.obsidian.Obsidian.desktop', 'com.valvesoftware.Steam.desktop', 'chrome-chcecgcbjkilfgeccdhoeaillkophnhg-Default.desktop', 'org.gnome.Music.desktop', 'com.stremio.Stremio.desktop', 'com.visualstudio.code.desktop', 'com.jetbrains.IntelliJ-IDEA-Community.desktop']"
 
     #Extensions config
     dconf write /org/gnome/shell/extensions/just-perfection/window-demands-attention-focus true
