@@ -156,7 +156,7 @@ echo -e "\n"
     gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic true
     
     #Dock personalization (gsettings get org.gnome.shell favorite-apps)
-    gsettings set org.gnome.shell favorite-apps "['org.gnome.Ptyxis.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'com.bitwarden.desktop.desktop', 'md.obsidian.Obsidian.desktop', 'com.valvesoftware.Steam.desktop', 'chrome-chcecgcbjkilfgeccdhoeaillkophnhg-Default.desktop', 'org.gnome.Music.desktop', 'com.stremio.Stremio.desktop', 'com.visualstudio.code.desktop', 'com.jetbrains.IntelliJ-IDEA-Community.desktop']"
+    gsettings set org.gnome.shell favorite-apps "['org.gnome.Ptyxis.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'com.bitwarden.desktop.desktop', 'md.obsidian.Obsidian.desktop', 'com.valvesoftware.Steam.desktop', 'org.gnome.Music.desktop', 'com.stremio.Stremio.desktop', 'com.visualstudio.code.desktop']"
 
     #Extensions config
     dconf write /org/gnome/shell/extensions/just-perfection/window-demands-attention-focus true
@@ -249,6 +249,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub org.musicbrainz.Picard -y
     flatpak install flathub com.bitwarden.desktop -y
     flatpak install flathub com.binarynonsense.acbr -y
+    flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
