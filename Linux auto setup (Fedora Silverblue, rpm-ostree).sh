@@ -36,9 +36,34 @@ echo '
 '
 
 # Install of RPM images
-read -p 'Install RPM images (first run)? (y/N) ' -n 1 -r
+read -p 'Install RPM repos? (y/N) ' -n 1 -r
 echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+    #Flatpak repo
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    sudo flatpak remote-modify --enable flathub
+
+    #RPM fusion repo
+    rpm-ostree install \
+      https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+      https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+    
+    systemctl reboot
+fi
+
+# Install of FFMPEG libs
+read -p 'Replace ffmpeg libs? (y/N) ' -n 1 -r
+echo -e "\n"
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    rpm-ostree override remove libavcodec-free libavfilter-free libavformat-free libavutil-free libpostproc-free libswresample-free libswscale-free ffmpeg-free libavdevice-free --install ffmpeg
+    
+    systemctl reboot
+fi
+
+# Install of RPM images
+read -p 'Install RPM images? (y/N) ' -n 1 -r
+echo -e "\n"
+if [[ $REPLY =~ ^[Yy]$ ]]; then 
     rpm-ostree install git -y
     rpm-ostree install gnome-shell-extension-appindicator -y
     rpm-ostree install papirus-icon-theme -y
@@ -46,6 +71,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     rpm-ostree install openssl -y
     rpm-ostree install htop -y
     rpm-ostree install lm_sensors -y
+
+    #RPM fusion 
+    rpm-ostree install megasync -y
+    
     systemctl reboot
 fi
 
@@ -58,10 +87,6 @@ echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     timedatectl set-local-rtc 1 --adjust-system-clock
 fi
-
-#Flatpak support
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo flatpak remote-modify --enable flathub
 
 #Firewalld
 #Local Filen webdav port
