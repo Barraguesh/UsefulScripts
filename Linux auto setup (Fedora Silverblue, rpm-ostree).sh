@@ -51,19 +51,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     systemctl reboot
 fi
 
-# Install of FFMPEG libs
-read -p 'Replace ffmpeg libs? (y/N) ' -n 1 -r
-echo -e "\n"
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    rpm-ostree override remove libavcodec-free libavfilter-free libavformat-free libavutil-free libpostproc-free libswresample-free libswscale-free ffmpeg-free libavdevice-free --install ffmpeg
-    
-    systemctl reboot
-fi
-
 # Install of RPM images
 read -p 'Install RPM images? (y/N) ' -n 1 -r
 echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then 
+    # ffmpeg libs
+    rpm-ostree override remove libavcodec-free libavfilter-free libavformat-free libavutil-free libpostproc-free libswresample-free libswscale-free ffmpeg-free libavdevice-free --install ffmpeg -y
+    
     rpm-ostree install git -y
     rpm-ostree install gnome-shell-extension-appindicator -y
     rpm-ostree install papirus-icon-theme -y
