@@ -61,7 +61,7 @@ fi
 
 #Flatpak support
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak remote-modify --enable flathub
+sudo flatpak remote-modify --enable flathub
 
 #Firewalld
 #Local Filen webdav port
@@ -110,11 +110,11 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     firefox 'https://extensions.gnome.org/extension/5660/weather-or-not/'
     firefox 'https://extensions.gnome.org/extension/307/dash-to-dock/'
     firefox 'https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/'
-    firefox 'https://extensions.gnome.org/extension/6385/steal-my-focus-window/'
 fi
 
 read -p 'Setup Gnome? (y/N) ' -n 1 -r
 echo -e "\n"
+if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo '
     █▀▀ █▄░█ █▀█ █▀▄▀█ █▀▀   █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
     █▄█ █░▀█ █▄█ █░▀░█ ██▄   ▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█ ▄█
@@ -143,12 +143,12 @@ echo -e "\n"
     gsettings set org.gnome.desktop.privacy remove-old-trash-files true
     gsettings set org.gnome.desktop.privacy remove-old-temp-files true
     gsettings set org.gnome.desktop.privacy old-files-age "uint32 14"
-    gsettings set org.gnome.shell had-bluetooth-devices-setup true
+    #gsettings set org.gnome.shell had-bluetooth-devices-setup true
     gsettings set org.gnome.nautilus.preferences show-delete-permanently true
     dconf write /org/gtk/gtk4/settings/file-chooser/sort-directories-first true
     gsettings set org.gnome.desktop.wm.preferences focus-new-windows 'smart'
     gsettings set org.gnome.desktop.interface clock-format '24h'
-    dconf write /org/gnome/desktop/peripherals/mouse/speed0.45299145299145294
+    dconf write /org/gnome/desktop/peripherals/mouse/speed 0.45299145299145294
 
     #Night light
     gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
@@ -171,11 +171,12 @@ echo -e "\n"
     dconf write /org/gnome/shell/extensions/blur-my-shell/applications/enable-all true
     
     dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed false
-    dconf write /org/gnome/shell/extensions/dash-to-dock/transparency-mode 'DYNAMIC'
-    dconf write /org/gnome/shell/extensions/dash-to-dock/click-action 'minimize'
+    dconf write /org/gnome/shell/extensions/dash-to-dock/transparency-mode "'DYNAMIC'"
+    dconf write /org/gnome/shell/extensions/dash-to-dock/click-action "'minimize'"
     dconf write /org/gnome/shell/extensions/dash-to-dock/hot-keys false
     dconf write /org/gnome/shell/extensions/dash-to-dock/height-fraction 0.90000000000000002
     dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 64
+    dconf write /org/gnome/shell/extensions/dash-to-dock/show-trash false
     
     dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-size 18
     dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-padding-horizontal 6
@@ -243,7 +244,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.github.tchx84.Flatseal -y
     flatpak install flathub md.obsidian.Obsidian -y
     flatpak install flathub com.visualstudio.code -y
-    #flatpak install flathub org.libreoffice.LibreOffice -y
+    flatpak install flathub org.libreoffice.LibreOffice -y
     flatpak install flathub org.gnome.NetworkDisplays -y
     flatpak install flathub io.missioncenter.MissionCenter -y
     flatpak install flathub org.musicbrainz.Picard -y
@@ -259,7 +260,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     #flatpak install flathub com.belmoussaoui.Obfuscate -y
 
     #Removal of RPM apps
-    rpm-ostree override remove firefox     
+    sudo rpm-ostree override remove firefox firefox-langpacks  
 fi
 
 cd /tmp
