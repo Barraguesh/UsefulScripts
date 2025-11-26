@@ -65,6 +65,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     rpm-ostree install openssl -y
     rpm-ostree install htop -y
     rpm-ostree install lm_sensors -y
+    rpm-ostree install solaar -y
 
     #RPM fusion 
     rpm-ostree install megasync -y
