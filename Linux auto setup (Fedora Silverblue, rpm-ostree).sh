@@ -69,7 +69,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     rpm-ostree install gnome-tweaks -y
 
     #RPM fusion 
-    rpm-ostree install megasync -y
+    # THIS IS BROKEN, install RPM from website
+    #rpm-ostree install megasync -y
     
     systemctl reboot
 fi
@@ -273,6 +274,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.bitwarden.desktop -y
     flatpak install flathub com.binarynonsense.acbr -y
     flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community -y
+    flatpak install flathub it.mijorus.gearlever -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
