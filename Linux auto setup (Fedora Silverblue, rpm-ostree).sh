@@ -36,7 +36,7 @@ echo '
 '
 
 # Install of RPM images
-read -p 'Install RPM repos? (y/N) ' -n 1 -r
+read -p 'Install repos? (y/N) ' -n 1 -r
 echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     #Flatpak repo
@@ -78,6 +78,71 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     systemctl reboot
 fi
 
+read -p 'Install extensions? (y/N) ' -n 1 -r
+echo -e "\n"
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo '
+    █▀▀ ▀▄▀ ▀█▀ █▀▀ █▄░█ █▀ █ █▀█ █▄░█ █▀
+    ██▄ █░█ ░█░ ██▄ █░▀█ ▄█ █ █▄█ █░▀█ ▄█
+    '
+    sleep 5
+    
+    firefox 'https://extensions.gnome.org/extension/3843/just-perfection/'
+    firefox 'https://extensions.gnome.org/extension/615/appindicator-support/'
+    firefox 'https://extensions.gnome.org/extension/3193/blur-my-shell/'
+    firefox 'https://extensions.gnome.org/extension/5660/weather-or-not/'
+    firefox 'https://extensions.gnome.org/extension/307/dash-to-dock/'
+    firefox 'https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/'
+fi
+
+read -p 'Install Flatpak apps? (y/N) ' -n 1 -r
+echo -e "\n"
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo '
+    ▄▀█ █▀█ █▀█ █▀
+    █▀█ █▀▀ █▀▀ ▄█
+    '
+    sleep 5    
+    
+    #Flatpak apps
+    flatpak install flathub org.mozilla.firefox -y
+    flatpak install org.freedesktop.Platform.ffmpeg-full -y
+    flatpak install flathub org.chromium.Chromium -y
+    flatpak install flathub org.gnome.Papers -y
+    flatpak install flathub org.gnome.Music -y
+    flatpak install flathub org.cryptomator.Cryptomator -y
+    flatpak install flathub com.obsproject.Studio -y
+    flatpak install flathub com.stremio.Stremio -y
+    flatpak install flathub org.videolan.VLC -y
+    flatpak install flathub com.github.philip_scott.spice-up -y
+    flatpak install flathub org.kde.kdenlive -y
+    flatpak install flathub org.fedoraproject.MediaWriter -y
+    flatpak install flathub com.transmissionbt.Transmission -y
+    flatpak install flathub org.gnome.Extensions -y
+    flatpak install flathub com.calibre_ebook.calibre -y
+    flatpak install flathub com.github.tchx84.Flatseal -y
+    flatpak install flathub md.obsidian.Obsidian -y
+    flatpak install flathub com.visualstudio.code -y
+    flatpak install flathub org.libreoffice.LibreOffice -y
+    flatpak install flathub org.gnome.NetworkDisplays -y
+    flatpak install flathub io.missioncenter.MissionCenter -y
+    flatpak install flathub org.musicbrainz.Picard -y
+    flatpak install flathub com.bitwarden.desktop -y
+    flatpak install flathub com.binarynonsense.acbr -y
+    flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community -y
+    flatpak install flathub it.mijorus.gearlever -y
+    
+    #Steam and Proton GE
+    flatpak install flathub com.valvesoftware.Steam -y
+    flatpak install com.valvesoftware.Steam.CompatibilityTool.Proton-GE -y
+    
+    #Useful apps not marked for install
+    #flatpak install flathub com.belmoussaoui.Obfuscate -y
+
+    #Removal of RPM apps
+    sudo rpm-ostree override remove firefox firefox-langpacks  
+fi
+
 #Git credentials
 git config --global user.email '25356150+Barraguesh@users.noreply.github.com'
 git config --global user.name 'Barraguesh'
@@ -110,36 +175,8 @@ sudo systemctl enable downloads_cleanup.service
 # Flatpak security override
 flatpak override --user --nofilesystem=home
 flatpak override --user --nofilesystem=host
-
-# Papirus folders script TODO remove
-cat >> ./papirus_folders_color.service << 'END'
-[Service]
-Type=oneshot
-RemainAfterExit=yes
-ExecStart=/bin/bash -c “/home/barraguesh/Tech\ stuff/Scripts/papirus-folders-color.sh”
-
-[Install]
-WantedBy=multi-user.target
-END
-sudo cp ./papirus_folders_color.service /etc/systemd/system/
-sudo systemctl enable papirus_folders_color.service
-
-read -p 'Install extensions? (y/N) ' -n 1 -r
-echo -e "\n"
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    echo '
-    █▀▀ ▀▄▀ ▀█▀ █▀▀ █▄░█ █▀ █ █▀█ █▄░█ █▀
-    ██▄ █░█ ░█░ ██▄ █░▀█ ▄█ █ █▄█ █░▀█ ▄█
-    '
-    sleep 5
-    
-    firefox 'https://extensions.gnome.org/extension/3843/just-perfection/'
-    firefox 'https://extensions.gnome.org/extension/615/appindicator-support/'
-    firefox 'https://extensions.gnome.org/extension/3193/blur-my-shell/'
-    firefox 'https://extensions.gnome.org/extension/5660/weather-or-not/'
-    firefox 'https://extensions.gnome.org/extension/307/dash-to-dock/'
-    firefox 'https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/'
-fi
+#Firefox should access downloads
+flatpak override --user --filesystem=~/Downloads org.mozilla.firefox
 
 read -p 'Setup Gnome? (y/N) ' -n 1 -r
 echo -e "\n"
@@ -234,66 +271,14 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     #Icons
     gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
     
-    #Papirus folders for custom folder colors
-    wget -qO- https://git.io/papirus-folders-install | sh
-    papirus-folders -C teal    
+    #Papirus folders for custom folder colors - NOT WORKING IN SILVERBLUE
+    #wget -qO- https://git.io/papirus-folders-install | sh
+    #papirus-folders -C teal    
     
-    #Cursor
-    git clone https://github.com/mustafaozhan/Breeze-Adapta-Cursor.git
-    sudo cp -R ./Breeze-Adapta-Cursor ~/.local/share/themes/Breeze\ Adapta
-    gsettings set org.gnome.desktop.interface cursor-theme 'Breeze Adapta'
-    
-    gsettings set org.gnome.desktop.interface cursor-theme breeze_cursors
+    #Cursor    
+    gsettings set org.gnome.desktop.interface cursor-theme Breeze_Light
     echo 'Sifr (dark), recommended icon theme for Libreoffice with dark themes)'
     sleep 20
-fi
-
-read -p 'Install apps? (y/N) ' -n 1 -r
-echo -e "\n"
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    echo '
-    ▄▀█ █▀█ █▀█ █▀
-    █▀█ █▀▀ █▀▀ ▄█
-    '
-    sleep 5    
-    
-    #Flatpak apps
-    flatpak install flathub org.mozilla.firefox -y
-    flatpak install org.freedesktop.Platform.ffmpeg-full -y
-    flatpak install flathub org.chromium.Chromium -y
-    flatpak install flathub org.gnome.Papers -y
-    flatpak install flathub org.gnome.Music -y
-    flatpak install flathub org.cryptomator.Cryptomator -y
-    flatpak install flathub com.obsproject.Studio -y
-    flatpak install flathub com.stremio.Stremio -y
-    flatpak install flathub org.videolan.VLC -y
-    flatpak install flathub com.github.philip_scott.spice-up -y
-    flatpak install flathub org.kde.kdenlive -y
-    flatpak install flathub org.fedoraproject.MediaWriter -y
-    flatpak install flathub com.transmissionbt.Transmission -y
-    flatpak install flathub org.gnome.Extensions -y
-    flatpak install flathub com.calibre_ebook.calibre -y
-    flatpak install flathub com.github.tchx84.Flatseal -y
-    flatpak install flathub md.obsidian.Obsidian -y
-    flatpak install flathub com.visualstudio.code -y
-    flatpak install flathub org.libreoffice.LibreOffice -y
-    flatpak install flathub org.gnome.NetworkDisplays -y
-    flatpak install flathub io.missioncenter.MissionCenter -y
-    flatpak install flathub org.musicbrainz.Picard -y
-    flatpak install flathub com.bitwarden.desktop -y
-    flatpak install flathub com.binarynonsense.acbr -y
-    flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community -y
-    flatpak install flathub it.mijorus.gearlever -y
-    
-    #Steam and Proton GE
-    flatpak install flathub com.valvesoftware.Steam -y
-    flatpak install com.valvesoftware.Steam.CompatibilityTool.Proton-GE -y
-    
-    #Useful apps not marked for install
-    #flatpak install flathub com.belmoussaoui.Obfuscate -y
-
-    #Removal of RPM apps
-    sudo rpm-ostree override remove firefox firefox-langpacks  
 fi
 
 cd /tmp
@@ -308,4 +293,5 @@ echo '
 ╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝╚═╝░░╚══╝╚══════╝  ╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚═════╝░░░░╚═╝░░░
 '
 
-echo 'Restarting is recommended'
+sleep 20
+systemctl reboot
