@@ -58,15 +58,18 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     # ffmpeg libs
     rpm-ostree override remove libavcodec-free libavfilter-free libavformat-free libavutil-free libpostproc-free libswresample-free libswscale-free ffmpeg-free libavdevice-free --install ffmpeg -y
     
-    rpm-ostree install git -y
-    rpm-ostree install gnome-shell-extension-appindicator -y
-    rpm-ostree install papirus-icon-theme -y
-    rpm-ostree install neofetch -y
-    rpm-ostree install openssl -y
-    rpm-ostree install htop -y
-    rpm-ostree install lm_sensors -y
-    rpm-ostree install solaar -y
-    rpm-ostree install gnome-tweaks -y
+    rpm-ostree install git
+    rpm-ostree install gnome-shell-extension-appindicator
+    rpm-ostree install neofetch
+    rpm-ostree install openssl
+    rpm-ostree install htop
+    rpm-ostree install lm_sensors
+    rpm-ostree install solaar
+    rpm-ostree install gnome-tweaks
+
+    #Themes
+    rpm-ostree install papirus-icon-theme
+    rpm-ostree install breeze-cursor-theme
 
     #RPM fusion 
     # THIS IS BROKEN, install RPM from website
@@ -233,8 +236,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     
     #Cursor
     git clone https://github.com/mustafaozhan/Breeze-Adapta-Cursor.git
-    sudo cp -R ./Breeze-Adapta-Cursor /usr/share/icons/Breeze\ Adapta
+    sudo cp -R ./Breeze-Adapta-Cursor ~/.local/share/themes/Breeze\ Adapta
     gsettings set org.gnome.desktop.interface cursor-theme 'Breeze Adapta'
+    
+    gsettings set org.gnome.desktop.interface cursor-theme breeze_cursors
     echo 'Sifr (dark), recommended icon theme for Libreoffice with dark themes)'
     sleep 20
 fi
