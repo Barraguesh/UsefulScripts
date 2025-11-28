@@ -107,7 +107,11 @@ END
 sudo cp ./downloads_cleanup.service /etc/systemd/system/
 sudo systemctl enable downloads_cleanup.service
 
-# Papirus folders script
+# Flatpak security override
+flatpak override --user --nofilesystem=home
+flatpak override --user --nofilesystem=host
+
+# Papirus folders script TODO remove
 cat >> ./papirus_folders_color.service << 'END'
 [Service]
 Type=oneshot
