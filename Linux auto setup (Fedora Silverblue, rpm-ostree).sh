@@ -131,6 +131,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.binarynonsense.acbr -y
     flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community -y
     flatpak install flathub it.mijorus.gearlever -y
+    flatpak install flathub io.github.jonmagon.kdiskmark -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
