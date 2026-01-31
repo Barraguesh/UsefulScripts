@@ -66,7 +66,7 @@ read -p 'Install RPM images? (y/N) ' -n 1 -r
 echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then 
     # ffmpeg libs
-    rpm-ostree override remove libavcodec-free libavfilter-free libavformat-free libavutil-free libpostproc-free libswresample-free libswscale-free ffmpeg-free libavdevice-free --install ffmpeg -y
+    rpm-ostree override remove libavcodec-free libavfilter-free libavformat-free libavutil-free libpostproc-free libswresample-free libswscale-free ffmpeg-free libavdevice-free --install ffmpeg
     
     rpm-ostree install git
     rpm-ostree install gnome-shell-extension-appindicator
