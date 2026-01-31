@@ -36,6 +36,16 @@ echo '
 '
 
 # Install of RPM images
+read -p 'Auto-unlock LUKS encrypted volume with TPMs? (y/N) ' -n 1 -r
+echo -e "\n"
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo -e "Listing all encrypted volumes:"
+    sudo blkid -t TYPE=crypto_LUKS
+    read -p "Input the desired volume path. For example, /dev/nvme0n1p3: " path
+    sudo systemd-cryptenroll --tpm2-device=auto "$path"
+fi
+
+# Install of RPM images
 read -p 'Install repos? (y/N) ' -n 1 -r
 echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then
