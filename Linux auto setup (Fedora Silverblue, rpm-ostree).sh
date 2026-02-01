@@ -186,8 +186,12 @@ sudo systemctl enable downloads_cleanup.service
 # Flatpak security override
 flatpak override --user --nofilesystem=home
 flatpak override --user --nofilesystem=host
-#Firefox should access downloads
+#Specific app access
 flatpak override --user --filesystem=~/Downloads org.mozilla.firefox
+flatpak override --user --filesystem="~/Tech stuff/GIT" com.visualstudio.code
+mkdir ~/.Appimages
+flatpak override --user --filesystem="~/.Appimages" it.mijorus.gearlever
+
 
 read -p 'Setup Gnome? (y/N) ' -n 1 -r
 echo -e "\n"
