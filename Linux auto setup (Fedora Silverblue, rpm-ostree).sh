@@ -198,7 +198,8 @@ flatpak override --user --nofilesystem=host
 flatpak override --user --filesystem=~/Downloads org.mozilla.firefox
 flatpak override --user --filesystem="~/Tech stuff/GIT" com.visualstudio.code
 mkdir ~/.Appimages
-flatpak override --user --filesystem="~/.Appimages" it.mijorus.gearlever
+flatpak override --user --filesystem=~/.Appimages it.mijorus.gearlever
+flatpak override --user --filesystem=~/Downloads it.mijorus.gearlever
 
 
 read -p 'Setup Gnome? (y/N) ' -n 1 -r
