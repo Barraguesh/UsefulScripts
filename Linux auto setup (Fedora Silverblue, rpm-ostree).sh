@@ -35,7 +35,6 @@ echo '
 █▄▄ █▄█ █░▀█ █▀░ █ █▄█ █▄█ █▀▄ █▀█ ░█░ █ █▄█ █░▀█
 '
 
-# Install of RPM images
 read -p 'Auto-unlock LUKS encrypted volume with TPMs? (y/N) ' -n 1 -r
 echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -43,6 +42,15 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo blkid -t TYPE=crypto_LUKS
     read -p "Input the desired volume path. For example, /dev/nvme0n1p3: " path
     sudo systemd-cryptenroll --tpm2-device=auto "$path"
+fi
+
+# Update system
+read -p 'Update system? (y/N) ' -n 1 -r
+echo -e "\n"
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    flatpak update -y
+    rpm-ostree update
+    sudo systemctl reboot
 fi
 
 # Install of RPM images
@@ -58,7 +66,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
       https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
       https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
     
-    systemctl reboot
+    sudo systemctl reboot
 fi
 
 # Install of RPM images
@@ -85,7 +93,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     # THIS IS BROKEN, install RPM from website
     #rpm-ostree install megasync -y
     
-    systemctl reboot
+    sudo systemctl reboot
 fi
 
 read -p 'Install extensions? (y/N) ' -n 1 -r
@@ -309,4 +317,4 @@ echo '
 '
 
 sleep 20
-systemctl reboot
+sudo systemctl reboot
