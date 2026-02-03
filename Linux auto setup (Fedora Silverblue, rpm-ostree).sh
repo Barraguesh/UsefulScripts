@@ -200,6 +200,9 @@ flatpak override --user --filesystem="~/Tech stuff/GIT" com.visualstudio.code
 mkdir ~/.Appimages
 flatpak override --user --filesystem=~/.Appimages it.mijorus.gearlever
 flatpak override --user --filesystem=~/Downloads it.mijorus.gearlever
+flatpak override --user --filesystem=~/Documents org.cryptomator.Cryptomator
+flatpak override --user --filesystem=~/.local/share org.cryptomator.Cryptomator
+flatpak override --user --filesystem=~/.config org.cryptomator.Cryptomator
 
 
 read -p 'Setup Gnome? (y/N) ' -n 1 -r
