@@ -111,6 +111,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     firefox 'https://extensions.gnome.org/extension/5660/weather-or-not/'
     firefox 'https://extensions.gnome.org/extension/307/dash-to-dock/'
     firefox 'https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/'
+    firefox 'https://extensions.gnome.org/extension/4269/alphabetical-app-grid/'
 fi
 
 read -p 'Install Flatpak apps? (y/N) ' -n 1 -r
@@ -149,7 +150,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.binarynonsense.acbr -y
     flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community -y
     flatpak install flathub it.mijorus.gearlever -y
-    flatpak install flathub io.github.jonmagon.kdiskmark -y
+    flatpak install flathub com.mattjakeman.ExtensionManager -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
