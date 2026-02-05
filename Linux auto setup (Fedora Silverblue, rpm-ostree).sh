@@ -248,6 +248,11 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
     gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature "uint32 1700"
     gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic true
+
+    #Terminal
+    dconf write /org/gnome/Ptyxis/restore-session false
+    dconf write /org/gnome/Ptyxis/default-columns "uint32 100"
+    dconf write /org/gnome/Ptyxis/default-rows "uint32 25"
     
     #Dock personalization (gsettings get org.gnome.shell favorite-apps)
     gsettings set org.gnome.shell favorite-apps "['org.gnome.Ptyxis.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'com.bitwarden.desktop.desktop', 'md.obsidian.Obsidian.desktop', 'com.valvesoftware.Steam.desktop', 'org.gnome.Music.desktop', 'com.stremio.Stremio.desktop', 'com.visualstudio.code.desktop']"
