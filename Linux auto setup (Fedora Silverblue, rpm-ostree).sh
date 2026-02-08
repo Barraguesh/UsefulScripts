@@ -151,6 +151,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community -y
     flatpak install flathub it.mijorus.gearlever -y
     flatpak install flathub com.mattjakeman.ExtensionManager -y
+    flatpak install flathub app.xemu.xemu -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
@@ -204,6 +205,8 @@ flatpak override --user --filesystem=~/Downloads it.mijorus.gearlever
 flatpak override --user --filesystem=~/Documents org.cryptomator.Cryptomator
 flatpak override --user --filesystem=~/.local/share org.cryptomator.Cryptomator
 flatpak override --user --filesystem=~/.config org.cryptomator.Cryptomator
+flatpak install flathub app.xemu.xemu
+flatpak override --user --filesystem="~/Backups/Retro collection" app.xemu.xemu
 
 
 read -p 'Setup Gnome? (y/N) ' -n 1 -r
