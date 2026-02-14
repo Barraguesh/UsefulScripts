@@ -281,11 +281,15 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     dconf write /org/gnome/shell/extensions/dash-to-dock/height-fraction 0.90000000000000002
     dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 64
     dconf write /org/gnome/shell/extensions/dash-to-dock/show-trash false
-    
-    dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-size 18
-    dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-padding-horizontal 6
-    dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-margin-horizontal 2
-    dconf write /org/gnome/shell/extensions/trayIconsReloaded/tray-margin-right 0
+
+    #No longer using trayIconsReloaded
+    #dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-size 18
+    #dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-padding-horizontal 6
+    #dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-margin-horizontal 2
+    #dconf write /org/gnome/shell/extensions/trayIconsReloaded/tray-margin-right 0
+
+    dconf write /org/gnome/shell/extensions/appindicator/icon-size 18
+    dconf write /org/gnome/shell/extensions/appindicator/compact-mode-enabled false
     
     echo 'Settings applied.'
 fi
