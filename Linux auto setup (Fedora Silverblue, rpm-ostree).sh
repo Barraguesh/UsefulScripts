@@ -197,7 +197,8 @@ sudo systemctl enable downloads_cleanup.service
 # Flatpak security override
 flatpak override --user --nofilesystem=home
 flatpak override --user --nofilesystem=host
-#Specific app access
+#Specific app access or permissions
+# Device=all enabled GPU acceleration and other devicves
 flatpak override --user --filesystem=~/Downloads org.mozilla.firefox
 flatpak override --user --filesystem="~/Tech stuff/GIT" com.visualstudio.code
 mkdir ~/.Appimages
