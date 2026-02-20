@@ -220,7 +220,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     '
     
     #Use "dconf watch /" and use tweaks/tools to see changes and create commands
-    gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
+    gsettings set org.gnome.desktop.sound allow-volume-above-100-percent false
     gsettings set org.gnome.desktop.interface font-name 'Liberation Sans 12'
     gsettings set org.gnome.desktop.interface document-font-name 'Liberation Sans 12'
     gsettings set org.gnome.desktop.interface monospace-font-name 'Liberation Mono 12'
