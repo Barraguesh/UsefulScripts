@@ -312,11 +312,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
     
     #Papirus folders for custom folder colors - NOT WORKING IN SILVERBLUE
-    #wget -qO- https://git.io/papirus-folders-install | sh
+    #wget -qO- https://git.io/papirus-folders-install | env PREFIX=$HOME/.local sh
     #papirus-folders -C teal    
     
-    #Cursor    
-    gsettings set org.gnome.desktop.interface cursor-theme Breeze_Light
+    #Cursor
+    git clone https://github.com/mustafaozhan/Breeze-Adapta-Cursor.git
+    sudo cp -R ./Breeze-Adapta-Cursor ~/.local/share/icons/Breeze\ Adapta
+    gsettings set org.gnome.desktop.interface cursor-theme 'Breeze Adapta'
     echo 'Sifr (dark), recommended icon theme for Libreoffice with dark themes)'
     sleep 20
 fi
