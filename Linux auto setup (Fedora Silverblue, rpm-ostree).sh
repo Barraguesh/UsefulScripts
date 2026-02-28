@@ -245,7 +245,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     dconf write /org/gtk/gtk4/settings/file-chooser/sort-directories-first true
     gsettings set org.gnome.desktop.wm.preferences focus-new-windows 'smart'
     gsettings set org.gnome.desktop.interface clock-format '24h'
-    dconf write /org/gnome/desktop/peripherals/mouse/speed 0.45299145299145294
+    dconf write /org/gnome/desktop/peripherals/mouse/speed 0
     dconf write /org/gnome/desktop/interface/accent-color "'green'"
 
     #Night light
