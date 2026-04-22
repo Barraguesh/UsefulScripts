@@ -207,6 +207,7 @@ flatpak override --user --filesystem=~/.local/share org.cryptomator.Cryptomator
 flatpak override --user --filesystem=~/.config org.cryptomator.Cryptomator
 flatpak override --user --filesystem="~/Backups/Retro collection" app.xemu.xemu
 flatpak override --user --filesystem=~/Downloads io.github.peazip.PeaZip
+flatpak override --user --filesystem=~/Desktop com.binarynonsense.acbr
 
 
 read -p 'Setup Gnome? (y/N) ' -n 1 -r
