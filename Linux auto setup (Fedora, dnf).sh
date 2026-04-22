@@ -10,12 +10,19 @@ echo 'Fullscreen is recomended for readability'
 sleep 2
 
 echo '
-░█████╗░██╗░░░██╗████████╗░█████╗░░██████╗███████╗████████╗██╗░░░██╗██████╗░  ██╗░░░██╗░░██╗██╗░░░██████╗░
-██╔══██╗██║░░░██║╚══██╔══╝██╔══██╗██╔════╝██╔════╝╚══██╔══╝██║░░░██║██╔══██╗  ██║░░░██║░██╔╝██║░░░╚════██╗
-███████║██║░░░██║░░░██║░░░██║░░██║╚█████╗░█████╗░░░░░██║░░░██║░░░██║██████╔╝  ╚██╗░██╔╝██╔╝░██║░░░░░███╔═╝
-██╔══██║██║░░░██║░░░██║░░░██║░░██║░╚═══██╗██╔══╝░░░░░██║░░░██║░░░██║██╔═══╝░  ░╚████╔╝░███████║░░░██╔══╝░░
-██║░░██║╚██████╔╝░░░██║░░░╚█████╔╝██████╔╝███████╗░░░██║░░░╚██████╔╝██║░░░░░  ░░╚██╔╝░░╚════██║██╗███████╗
-╚═╝░░╚═╝░╚═════╝░░░░╚═╝░░░░╚════╝░╚═════╝░╚══════╝░░░╚═╝░░░░╚═════╝░╚═╝░░░░░  ░░░╚═╝░░░░░░░░╚═╝╚═╝╚══════╝
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+─██████████████─██████──██████─██████████████─██████████████─██████████████─██████████████─██████████████─██████████████─██████──██████─██████████████──────██████──██████─██████████████────────████████───
+─██░░░░░░░░░░██─██░░██──██░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░██──██░░██─██░░░░░░░░░░██──────██░░██──██░░██─██░░░░░░░░░░██────────██░░░░██───
+─██░░██████░░██─██░░██──██░░██─██████░░██████─██░░██████░░██─██░░██████████─██░░██████████─██░░██████░░██─██████░░██████─██░░██──██░░██─██░░██████░░██──────██░░██──██░░██─██░░██████████────────████░░██───
+─██░░██──██░░██─██░░██──██░░██─────██░░██─────██░░██──██░░██─██░░██─────────██░░██─────────██░░██──██░░██─────██░░██─────██░░██──██░░██─██░░██──██░░██──────██░░██──██░░██─██░░██──────────────────██░░██───
+─██░░██████░░██─██░░██──██░░██─────██░░██─────██░░██──██░░██─██░░██████████─██░░██████████─██░░██████░░██─────██░░██─────██░░██──██░░██─██░░██████░░██──────██░░██──██░░██─██░░██████████──────────██░░██───
+─██░░░░░░░░░░██─██░░██──██░░██─────██░░██─────██░░██──██░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─────██░░██─────██░░██──██░░██─██░░░░░░░░░░██──────██░░██──██░░██─██░░░░░░░░░░██──────────██░░██───
+─██░░██████░░██─██░░██──██░░██─────██░░██─────██░░██──██░░██─██████████░░██─██░░██████████─██░░██████████─────██░░██─────██░░██──██░░██─██░░██████████──────██░░██──██░░██─██████████░░██──────────██░░██───
+─██░░██──██░░██─██░░██──██░░██─────██░░██─────██░░██──██░░██─────────██░░██─██░░██─────────██░░██─────────────██░░██─────██░░██──██░░██─██░░██──────────────██░░░░██░░░░██─────────██░░██──────────██░░██───
+─██░░██──██░░██─██░░██████░░██─────██░░██─────██░░██████░░██─██████████░░██─██░░██████████─██░░██─────────────██░░██─────██░░██████░░██─██░░██──────────────████░░░░░░████─██████████░░██─██████─████░░████─
+─██░░██──██░░██─██░░░░░░░░░░██─────██░░██─────██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░██─────────────██░░██─────██░░░░░░░░░░██─██░░██────────────────████░░████───██░░░░░░░░░░██─██░░██─██░░░░░░██─
+─██████──██████─██████████████─────██████─────██████████████─██████████████─██████████████─██████─────────────██████─────██████████████─██████──────────────────██████─────██████████████─██████─██████████─
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 '
 sleep 5
 
@@ -37,6 +44,16 @@ sudo dnf install git -y
 git config --global user.email '25356150+Barraguesh@users.noreply.github.com'
 git config --global user.name 'Barraguesh'
 
+read -p 'Auto-unlock LUKS encrypted volume with TPMs? (y/N) ' -n 1 -r
+echo -e "\n"
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo -e "Listing all encrypted volumes:"
+    sudo blkid -t TYPE=crypto_LUKS
+    read -p "Input the desired volume path. For example, /dev/nvme0n1p3: " path
+    sudo systemd-cryptenroll --tpm2-device=auto "$path"
+fi
+
+
 read -p 'Do you want to reboot (recommended on first run)? (y/N) ' -n 1 -r
 echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -49,7 +66,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     timedatectl set-local-rtc 1 --adjust-system-clock
 fi
 
-read -p 'Install auto-cpufreq? (y/N) ' -n 1 -r
+read -p 'Install auto-cpufreq (recommended for laptops)? (y/N) ' -n 1 -r
 echo -e "\n"
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     git clone https://github.com/AdnanHodzic/auto-cpufreq.git
@@ -104,7 +121,7 @@ echo '
 '
 
 #Use "dconf watch /" and use tweaks/tools to see changes and create commands
-gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
+gsettings set org.gnome.desktop.sound allow-volume-above-100-percent false
 gsettings set org.gnome.desktop.interface font-name 'Liberation Sans 12'
 gsettings set org.gnome.desktop.interface document-font-name 'Liberation Sans 12'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Liberation Mono 12'
@@ -126,19 +143,56 @@ gsettings set org.gnome.desktop.privacy recent-files-max-age 7
 gsettings set org.gnome.desktop.privacy remove-old-trash-files true
 gsettings set org.gnome.desktop.privacy remove-old-temp-files true
 gsettings set org.gnome.desktop.privacy old-files-age "uint32 14"
-gsettings set org.gnome.shell had-bluetooth-devices-setup true
+#gsettings set org.gnome.shell had-bluetooth-devices-setup true
 gsettings set org.gnome.nautilus.preferences show-delete-permanently true
 dconf write /org/gtk/gtk4/settings/file-chooser/sort-directories-first true
 gsettings set org.gnome.desktop.wm.preferences focus-new-windows 'smart'
 gsettings set org.gnome.desktop.interface clock-format '24h'
+dconf write /org/gnome/desktop/peripherals/mouse/speed 0
+dconf write /org/gnome/desktop/interface/accent-color "'green'"
 
 #Night light
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature "uint32 1700"
 gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic true
 
+#Terminal
+dconf write /org/gnome/Ptyxis/restore-session false
+dconf write /org/gnome/Ptyxis/default-columns "uint32 100"
+dconf write /org/gnome/Ptyxis/default-rows "uint32 25"
+
 #Dock personalization (gsettings get org.gnome.shell favorite-apps)
-gsettings set org.gnome.shell favorite-apps "['org.gnome.Ptyxis.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'md.obsidian.Obsidian.desktop', 'com.valvesoftware.Steam.desktop', 'com.stremio.Stremio.desktop', 'com.visualstudio.code.desktop']"
+gsettings set org.gnome.shell favorite-apps "['org.gnome.Ptyxis.desktop', 'org.gnome.Nautilus.desktop', 'org.mozilla.firefox.desktop', 'com.bitwarden.desktop.desktop', 'md.obsidian.Obsidian.desktop', 'com.valvesoftware.Steam.desktop', 'app.xemu.xemu.desktop', 'com.nvidia.geforcenow.desktop', 'org.gnome.Music.desktop', 'com.stremio.Stremio.desktop', 'com.visualstudio.code.desktop', 'org.cryptomator.Cryptomator.desktop']"
+
+#Extensions config
+dconf write /org/gnome/shell/extensions/just-perfection/window-demands-attention-focus true
+dconf write /org/gnome/shell/extensions/just-perfection/world-clock false
+dconf write /org/gnome/shell/extensions/just-perfection/search false
+dconf write /org/gnome/shell/extensions/just-perfection/startup-status 0
+
+dconf write /org/gnome/shell/extensions/blur-my-shell/panel/blur true
+dconf write /org/gnome/shell/extensions/blur-my-shell/applications/sigma 5
+dconf write /org/gnome/shell/extensions/blur-my-shell/applications/opacity 200
+dconf write /org/gnome/shell/extensions/blur-my-shell/applications/dynamic-opacity true
+dconf write /org/gnome/shell/extensions/blur-my-shell/applications/enable-all true
+
+dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed false
+dconf write /org/gnome/shell/extensions/dash-to-dock/transparency-mode "'DYNAMIC'"
+dconf write /org/gnome/shell/extensions/dash-to-dock/click-action "'minimize'"
+dconf write /org/gnome/shell/extensions/dash-to-dock/hot-keys false
+dconf write /org/gnome/shell/extensions/dash-to-dock/height-fraction 0.90000000000000002
+dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size 64
+dconf write /org/gnome/shell/extensions/dash-to-dock/show-trash false
+
+#No longer using trayIconsReloaded
+#dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-size 18
+#dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-padding-horizontal 6
+#dconf write /org/gnome/shell/extensions/trayIconsReloaded/icon-margin-horizontal 2
+#dconf write /org/gnome/shell/extensions/trayIconsReloaded/tray-margin-right 0
+
+dconf write /org/gnome/shell/extensions/appindicator/icon-size 18
+dconf write /org/gnome/shell/extensions/appindicator/compact-mode-enabled false
+    
 echo 'Settings applied.'
 
 read -p 'Set up themes? (y/N) ' -n 1 -r
@@ -187,7 +241,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     firefox 'https://extensions.gnome.org/extension/5660/weather-or-not/'
     firefox 'https://extensions.gnome.org/extension/307/dash-to-dock/'
     firefox 'https://extensions.gnome.org/extension/352/middle-click-to-close-in-overview/'
-    firefox 'https://extensions.gnome.org/extension/6385/steal-my-focus-window/'
+    firefox 'https://extensions.gnome.org/extension/4269/alphabetical-app-grid/'
     #Solaar tray icon is broken, with this extension, that is objectively better for tray icons
     #firefox 'https://extensions.gnome.org/extension/2890/tray-icons-reloaded/'
 fi
@@ -207,7 +261,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf remove totem -y
     sudo dnf remove rhythmbox -y
     sudo dnf remove libreoffice* -y
-    sudo dnf remove firefox -y
+    sudo dnf remove firefox* -y
     sudo dnf remove evince -y
     sudo dnf remove gnome-weather -y
     
@@ -216,14 +270,14 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf install openssl -y
     sudo dnf install htop -y
     sudo dnf install lm_sensors -y
-    sudo dnf install evolution -y
     sudo dnf install gnome-tweak-tool  -y
     sudo dnf install solaar -y
-    sudo dnf install wine -y
+    #sudo dnf install wine -y
     sudo dnf install gnome-music -y
     
     #Flatpak apps
     flatpak install flathub org.mozilla.firefox -y
+    flatpak install org.freedesktop.Platform.ffmpeg-full -y
     flatpak install flathub org.chromium.Chromium -y
     flatpak install flathub org.gnome.Papers -y
     flatpak install flathub org.gnome.Music -y
@@ -243,11 +297,14 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub org.libreoffice.LibreOffice -y
     flatpak install flathub org.gnome.NetworkDisplays -y
     flatpak install flathub io.missioncenter.MissionCenter -y
-    flatpak install flathub io.github.nate_xyz.Resonance -y
     flatpak install flathub org.musicbrainz.Picard -y
     flatpak install flathub com.bitwarden.desktop -y
     flatpak install flathub com.binarynonsense.acbr -y
-    flatpak install flathub io.github.amit9838.mousam -y
+    flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community -y
+    flatpak install flathub it.mijorus.gearlever -y
+    flatpak install flathub com.mattjakeman.ExtensionManager -y
+    flatpak install flathub app.xemu.xemu -y
+    flatpak install flathub io.github.peazip.PeaZip -y
     
     #Steam and Proton GE
     flatpak install flathub com.valvesoftware.Steam -y
@@ -259,6 +316,23 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     #flatpak install flathub com.belmoussaoui.Obfuscate -y
     #flatpak install org.freedesktop.Platform.ffmpeg-full -y
 fi
+
+# Flatpak security override
+flatpak override --user --nofilesystem=home
+flatpak override --user --nofilesystem=host
+#Specific app access or permissions
+# Device=all enabled GPU acceleration and other devicves
+flatpak override --user --filesystem=~/Downloads org.mozilla.firefox
+flatpak override --user --filesystem="~/Tech stuff/GIT" com.visualstudio.code
+mkdir ~/.Appimages
+flatpak override --user --filesystem=~/.Appimages it.mijorus.gearlever
+flatpak override --user --filesystem=~/Downloads it.mijorus.gearlever
+flatpak override --user --filesystem=~/Documents org.cryptomator.Cryptomator
+flatpak override --user --filesystem=~/.local/share org.cryptomator.Cryptomator
+flatpak override --user --filesystem=~/.config org.cryptomator.Cryptomator
+flatpak override --user --filesystem="~/Backups/Retro collection" app.xemu.xemu
+flatpak override --user --filesystem=~/Downloads io.github.peazip.PeaZip
+flatpak override --user --filesystem=~/Desktop com.binarynonsense.acbr
 
 cd /tmp
 sudo rm -rf AutoSetup
