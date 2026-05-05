@@ -301,7 +301,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     flatpak install flathub com.bitwarden.desktop -y
     flatpak install flathub com.binarynonsense.acbr -y
     flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community -y
-    flatpak install flathub it.mijorus.gearlever -y
     flatpak install flathub com.mattjakeman.ExtensionManager -y
     flatpak install flathub app.xemu.xemu -y
     flatpak install flathub io.github.peazip.PeaZip -y
@@ -324,15 +323,13 @@ flatpak override --user --nofilesystem=host
 # Device=all enabled GPU acceleration and other devicves
 flatpak override --user --filesystem=~/Downloads org.mozilla.firefox
 flatpak override --user --filesystem="~/Tech stuff/GIT" com.visualstudio.code
-mkdir ~/.Appimages
-flatpak override --user --filesystem=~/.Appimages it.mijorus.gearlever
-flatpak override --user --filesystem=~/Downloads it.mijorus.gearlever
 flatpak override --user --filesystem=~/Documents org.cryptomator.Cryptomator
 flatpak override --user --filesystem=~/.local/share org.cryptomator.Cryptomator
 flatpak override --user --filesystem=~/.config org.cryptomator.Cryptomator
 flatpak override --user --filesystem="~/Backups/Retro collection" app.xemu.xemu
 flatpak override --user --filesystem=~/Downloads io.github.peazip.PeaZip
 flatpak override --user --filesystem=~/Desktop com.binarynonsense.acbr
+flatpak override --user --filesystem=~/Downloads com.binarynonsense.acbr
 
 cd /tmp
 sudo rm -rf AutoSetup
