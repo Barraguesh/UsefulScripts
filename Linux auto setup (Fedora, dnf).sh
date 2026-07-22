@@ -264,6 +264,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo dnf remove firefox* -y
     sudo dnf remove evince -y
     sudo dnf remove gnome-weather -y
+    sudo dnf remove loupe -y
     
     #Non flatpak apps
     sudo dnf install neofetch -y
@@ -278,6 +279,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     #Flatpak apps
     flatpak install flathub org.mozilla.firefox -y
     flatpak install org.freedesktop.Platform.ffmpeg-full -y
+    flatpak install flathub org.gnome.Loupe -y
     flatpak install flathub org.chromium.Chromium -y
     flatpak install flathub org.gnome.Papers -y
     flatpak install flathub org.gnome.Music -y
